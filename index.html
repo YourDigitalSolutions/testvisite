@@ -98,8 +98,8 @@
     }
 
     .social-icons a {
-      width: 30px;
-      height: 30px;
+      width: 50px;
+      height: 50px;
       border-radius: 10px;
       overflow: hidden;
       display: flex;
@@ -114,10 +114,17 @@
     }
 
     .social-icons img {
-      width: 85%;
-      height: 85%;
-      object-fit: contain;
-    }
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  filter: grayscale(0%);
+}
 
     @media (max-width: 400px) {
       .social-icons {
@@ -176,12 +183,172 @@
       </a>
     </div>
 
+    <div class="custom-button" role="button" tabindex="0" style="
+  border: none;
+  position: relative;
+  width: 200px;
+  height: 73px;
+  padding: 0;
+  z-index: 2;
+  -webkit-mask: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 height=%27868%27 width=%272500%27 viewBox=%270 0 726 252.17%27%3E%3Cpath d=%27M483.92 0S481.38 24.71 466 40.11c-11.74 11.74-24.09 12.66-40.26 15.07-9.42 1.41-29.7 3.77-34.81-.79-2.37-2.11-3-21-3.22-27.62-.21-6.92-1.36-16.52-2.82-18-.75 3.06-2.49 11.53-3.09 13.61S378.49 34.3 378 36a85.13 85.13 0 0 0-30.09 0c-.46-1.67-3.17-11.48-3.77-13.56s-2.34-10.55-3.09-13.61c-1.45 1.45-2.61 11.05-2.82 18-.21 6.67-.84 25.51-3.22 27.62-5.11 4.56-25.38 2.2-34.8.79-16.16-2.47-28.51-3.39-40.21-15.13C244.57 24.71 242 0 242 0H0s69.52 22.74 97.52 68.59c16.56 27.11 14.14 58.49 9.92 74.73C170 140 221.46 140 273 158.57c69.23 24.93 83.2 76.19 90 93.6 6.77-17.41 20.75-68.67 90-93.6 51.54-18.56 103-18.59 165.56-15.25-4.21-16.24-6.63-47.62 9.93-74.73C656.43 22.74 726 0 726 0z%27/%3E%3C/svg%3E') no-repeat 50% 50%;
+  mask: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 height=%27868%27 width=%272500%27 viewBox=%270 0 726 252.17%27%3E%3Cpath d=%27M483.92 0S481.38 24.71 466 40.11c-11.74 11.74-24.09 12.66-40.26 15.07-9.42 1.41-29.7 3.77-34.81-.79-2.37-2.11-3-21-3.22-27.62-.21-6.92-1.36-16.52-2.82-18-.75 3.06-2.49 11.53-3.09 13.61S378.49 34.3 378 36a85.13 85.13 0 0 0-30.09 0c-.46-1.67-3.17-11.48-3.77-13.56s-2.34-10.55-3.09-13.61c-1.45 1.45-2.61 11.05-2.82 18-.21 6.67-.84 25.51-3.22 27.62-5.11 4.56-25.38 2.2-34.8.79-16.16-2.47-28.51-3.39-40.21-15.13C244.57 24.71 242 0 242 0H0s69.52 22.74 97.52 68.59c16.56 27.11 14.14 58.49 9.92 74.73C170 140 221.46 140 273 158.57c69.23 24.93 83.2 76.19 90 93.6 6.77-17.41 20.75-68.67 90-93.6 51.54-18.56 103-18.59 165.56-15.25-4.21-16.24-6.63-47.62 9.93-74.73C656.43 22.74 726 0 726 0z%27/%3E%3C/svg%3E') no-repeat 50% 50%;
+  -webkit-mask-size: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  transform: translateY(8px);
+  " 
+  onkeydown="if(event.key==='Enter' || event.key===' ') { this.click(); }"
+>
+  <span style="
+    position: absolute;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 100;
+    left: 50%;
+    top: 39%;
+    letter-spacing: 3px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: black;
+    transition: all 2s ease;
+  " class="button-text">Mon bouton</span>
+
+  <style>
+    .custom-button::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: 0px 0 0 0 white;
+      transition: all 2s ease;
+      pointer-events: none;
+    }
+    .custom-button:hover::after {
+      box-shadow: 0px -13px 56px 12px #ffffffa6;
+    }
+    .custom-button:hover .button-text {
+      color: white;
+    }
+    .custom-button::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 100%;
+      background-color: black;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 1s ease;
+      pointer-events: none;
+    }
+    .custom-button:hover::before {
+      width: 100%;
+    }
+  </style>
+</div>
+
     <div class="social-icons">
       <a href="https://instagram.com/tonprofil" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" /></a>
       <a href="https://linkedin.com/in/tonprofil" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" /></a>
       <a href="https://youtube.com/tonprofil" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube" /></a>
       <a href="https://tiktok.com/@tonprofil" target="_blank" rel="noopener"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046123.png" alt="TikTok" /></a>
     </div>
+    
+    <div class="flex items-center justify-center mt-6">
+        <div class="relative group">
+          <button
+            class="relative inline-block p-px font-semibold leading-6 text-white bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
+          >
+            <span
+              class="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+            ></span>
+      
+            <span class="relative z-10 block px-6 py-3 rounded-xl bg-gray-950">
+              <div class="relative z-10 flex items-center space-x-2">
+                <span class="transition-all duration-500 group-hover:translate-x-1">
+                  Let's get started
+                </span>
+                <svg
+                  class="w-6 h-6 transition-transform duration-500 group-hover:translate-x-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+            </span>
+          </button>
+        </div>
+      </div>
+
+
+      <div class="flex justify-center mt-6">
+        <button class="relative h-[50px] px-[30px] border-[2px] border-black bg-[#e8e8e8] select-none whitespace-nowrap transition-all duration-75 font-sans hover:cursor-crosshair active:scale-95 before:content-[''] before:absolute before:bg-[#e8e8e8] before:transition-all before:duration-200 before:w-[calc(100%+6px)] before:h-[calc(100%-16px)] before:top-[8px] before:left-[-3px] hover:before:top-[16px] hover:before:h-[calc(100%-32px)] after:content-[''] after:absolute after:bg-[#e8e8e8] after:transition-all after:duration-200 after:w-[calc(100%-16px)] after:h-[calc(100%+6px)] after:top-[-3px] after:left-[8px] hover:after:left-[16px] hover:after:w-[calc(100%-32px)]">
+          <span class="relative z-[3] text-[15px] font-semibold">Découvrir</span>
+        </button>
+      </div>
+
+ 
+      
+
+
+      <div class="wrapper inline-flex justify-center w-full pt-10 space-x-4 font-[Poppins,sans-serif]">
+        <!-- Facebook -->
+        <div class="icon facebook relative bg-white rounded-full w-12 h-12 text-[18px] flex justify-center items-center flex-col shadow-md cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] group">
+          <div class="tooltip absolute top-0 left-1/2 -translate-x-1/2 bg-white text-white text-sm px-2 py-1 rounded-md shadow-md opacity-0 pointer-events-none transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] group-hover:top-[-45px] group-hover:opacity-100 group-hover:pointer-events-auto">
+            Facebook
+            <span class="absolute bottom-[-3px] left-1/2 w-2 h-2 bg-white rotate-45 -translate-x-1/2"></span>
+          </div>
+          <span class="transition group-hover:text-white">F</span>
+        </div>
+      
+        <!-- Twitter -->
+        <div class="icon twitter relative bg-white rounded-full w-12 h-12 text-[18px] flex justify-center items-center flex-col shadow-md cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] group">
+          <div class="tooltip absolute top-0 left-1/2 -translate-x-1/2 bg-white text-white text-sm px-2 py-1 rounded-md shadow-md opacity-0 pointer-events-none transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] group-hover:top-[-45px] group-hover:opacity-100 group-hover:pointer-events-auto">
+            Twitter
+            <span class="absolute bottom-[-3px] left-1/2 w-2 h-2 bg-white rotate-45 -translate-x-1/2"></span>
+          </div>
+          <span class="transition group-hover:text-white">T</span>
+        </div>
+      
+        <!-- Instagram -->
+        <div class="icon instagram relative bg-white rounded-full w-12 h-12 text-[18px] flex justify-center items-center flex-col shadow-md cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] group">
+          <div class="tooltip absolute top-0 left-1/2 -translate-x-1/2 bg-white text-white text-sm px-2 py-1 rounded-md shadow-md opacity-0 pointer-events-none transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] group-hover:top-[-45px] group-hover:opacity-100 group-hover:pointer-events-auto">
+            Instagram
+            <span class="absolute bottom-[-3px] left-1/2 w-2 h-2 bg-white rotate-45 -translate-x-1/2"></span>
+          </div>
+          <span class="transition group-hover:text-white">I</span>
+        </div>
+      
+        <style>
+          .facebook:hover, .facebook:hover .tooltip, .facebook:hover .tooltip span { background-color: #1877f2 !important; color: #fff !important; }
+          .twitter:hover, .twitter:hover .tooltip, .twitter:hover .tooltip span { background-color: #1da1f2 !important; color: #fff !important; }
+          .instagram:hover, .instagram:hover .tooltip, .instagram:hover .tooltip span { background-color: #e4405f !important; color: #fff !important; }
+        </style>
+      </div>
+
+      <!-- BOUTON 2 -->
+<div class="button-wrapper-2" style="display: flex; justify-content: center; align-items: center; height: 200px; background: #111;">
+    <button class="learn-more group relative inline-block w-48" style="cursor: pointer; font-family: inherit; font-size: inherit;">
+      <span class="circle block w-12 h-12 bg-[#282936] rounded-full relative transition-all duration-[450ms] ease-[cubic-bezier(0.65,0,0.076,1)] group-hover:w-full"></span>
+      <span class="icon arrow absolute top-1/2 left-[10px] -translate-y-1/2 w-[18px] h-[2px] bg-none transition-all duration-[450ms] ease-[cubic-bezier(0.65,0,0.076,1)] group-hover:bg-white group-hover:translate-x-4">
+        <span class="absolute top-[-4.6px] right-[1px] w-[10px] h-[10px] border-t-2 border-r-2 border-white rotate-45 content-['']"></span>
+      </span>
+      <span class="button-text absolute inset-0 px-0 py-3 ml-[1.85rem] text-[#282936] font-bold text-center uppercase leading-6 transition-all duration-[450ms] ease-[cubic-bezier(0.65,0,0.076,1)] group-hover:text-white">
+        Learn More
+      </span>
+    </button>
+  </div>
+
+  
+
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
